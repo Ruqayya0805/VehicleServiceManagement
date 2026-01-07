@@ -1,0 +1,169 @@
+# ========================================
+# Vehicle Service Management - .gitignore
+# ========================================
+
+# ==================
+# .NET / ASP.NET Core
+# ==================
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio files
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.dbmdl
+*.jfm
+*.pfx
+*.publishsettings
+
+# NuGet packages
+*.nupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+*.nuget.props
+*.nuget.targets
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Test Results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+*.trx
+*.log
+
+# NCrunch
+_NCrunch_*
+.*crunch*.local.xml
+nCrunchTemp_*
+
+# Publish / Deploy
+*.Publish.xml
+*.azurePubxml
+*.pubxml
+*.publishproj
+
+# Backup & misc
+*.bak
+*.cache
+*.[Cc]ache
+*_i.c
+*_p.c
+*_h.h
+*.aps
+*.ncb
+*.sdf
+*.opensdf
+*.VC.db
+*.VC.VC.opendb
+*.tmp
+~$*
+
+# Windows files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ==================
+# Angular / Node.js
+# ==================
+
+# Dependency directories
+node_modules/
+bower_components/
+
+# Angular CLI generated files
+.angular/
+
+# Compiled output
+dist/
+tmp/
+out-tsc/
+bazel-out/
+
+# Typing files
+typings/
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# IDE - WebStorm
+.idea/
+*.iml
+
+# Misc
+.sass-cache/
+connect.lock
+coverage/
+libpeerconnection.log
+testem.log
+
+# npm debug logs
+npm-debug.log
+yarn-error.log
+
+# System files
+.DS_Store
+
+# Environment files (may contain sensitive info)
+.env
+.env.local
+.env.*.local
+*.env
+
+# ==================
+# Sensitive / Secrets
+# ==================
+
+# API keys, secrets
+appsettings.Production.json
+secrets.json
+*.key
+*.pem
+
+# ==================
+# Misc / Temporary Files
+# ==================
+
+# Editor swap files
+*.swp
+*.swo
+*~
+
+# Log files
+*.log
+logs/
+stderr.txt
+stdout.txt
+errors.log
+
+# Test output files
+test_output.txt
+coverage/
+*.coverage
+*.coveragexml
+
+# Compressed files
+*.zip
+*.rar
+*.7z
+*.tar
+*.gz

@@ -1,0 +1,315 @@
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="navbar-container">
+        <a routerLink="/" class="navbar-logo">
+            <img src="logo.png" alt="CVMS" class="logo-img">
+            <span class="logo-text">Chubb Vehicle Management System</span>
+        </a>
+        <div class="navbar-actions">
+            <a routerLink="/login" class="btn-signin">Sign In</a>
+            <a routerLink="/register" class="btn-signup">Sign Up</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section with Video -->
+<section class="hero">
+    <video #heroVideo class="hero-video" autoplay muted loop playsinline>
+        <source src="hero.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <span class="hero-badge">Trusted by Chubb Employees</span>
+        <h1 class="hero-title">Premium Vehicle Service<br>You Can Trust</h1>
+        <p class="hero-subtitle">Experience world-class vehicle servicing with certified experts, transparent pricing,
+            and real-time tracking.</p>
+        <div class="hero-buttons">
+            <a routerLink="/register" class="btn-primary">Get Started <svg class="btn-icon" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg></a>
+            <a href="#services" class="btn-secondary">View Services</a>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us - Bento Grid -->
+<section class="section" id="why-us">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Why Choose Us</h2>
+            <p class="section-subtitle">We combine expertise, technology, and care to deliver the best service
+                experience</p>
+        </div>
+        <div class="bento-grid">
+            @for (item of whyChooseUs; track item.title; let i = $index) {
+            <div class="bento-card">
+                <div class="bento-icon">
+                    @switch (item.icon) {
+                    @case ('shield-check') {
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path
+                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                    }
+                    @case ('clock') {
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M12 6v6l4 2" />
+                    </svg>
+                    }
+                    @case ('wallet') {
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path
+                            d="M21 12V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2h14a2 2 0 002-2v-5zm-9 1a2 2 0 100-4 2 2 0 000 4z" />
+                    </svg>
+                    }
+                    @case ('award') {
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="12" cy="8" r="6" />
+                        <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11" />
+                    </svg>
+                    }
+                    @case ('location') {
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path
+                            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z" />
+                    </svg>
+                    }
+                    @case ('car') {
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path
+                            d="M5 17h14v-5l-2-5H7l-2 5v5zm3 2a2 2 0 100-4 2 2 0 000 4zm8 0a2 2 0 100-4 2 2 0 000 4z" />
+                    </svg>
+                    }
+                    }
+                </div>
+                <h3 class="bento-title">{{ item.title }}</h3>
+                <p class="bento-desc">{{ item.desc }}</p>
+            </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- Services -->
+<section class="section section-alt" id="services">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">Comprehensive vehicle care for all your needs</p>
+        </div>
+        <div class="services-grid">
+            @for (service of services; track service.title) {
+            <div class="service-card">
+                <div class="service-icon">
+                    @switch (service.icon) {
+                    @case ('wrench') {
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path
+                            d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" />
+                    </svg>
+                    }
+                    @case ('tire') {
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="12" cy="12" r="10" />
+                        <circle cx="12" cy="12" r="4" />
+                        <path d="M12 2v4m0 12v4M2 12h4m12 0h4" />
+                    </svg>
+                    }
+                    @case ('battery') {
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="2" y="7" width="18" height="12" rx="2" />
+                        <path d="M22 11v4M7 11v4m4-4v4" />
+                    </svg>
+                    }
+                    @case ('paint') {
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M19 3H5a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zM12 11v9m-3-6h6" />
+                    </svg>
+                    }
+                    @case ('snowflake') {
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93L4.93 19.07" />
+                    </svg>
+                    }
+                    @case ('bolt') {
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                    </svg>
+                    }
+                    }
+                </div>
+                <h3 class="service-title">{{ service.title }}</h3>
+                <p class="service-desc">{{ service.desc }}</p>
+            </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- Reviews Marquee -->
+<section class="section" id="reviews">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <p class="section-subtitle">Join thousands of satisfied customers</p>
+        </div>
+    </div>
+    <div class="reviews-marquee">
+        <div class="reviews-track">
+            @for (review of reviews; track review.name) {
+            <div class="review-card">
+                <div class="review-stars">
+                    <svg viewBox="0 0 20 20" fill="currentColor">
+                        <path
+                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg viewBox="0 0 20 20" fill="currentColor">
+                        <path
+                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg viewBox="0 0 20 20" fill="currentColor">
+                        <path
+                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg viewBox="0 0 20 20" fill="currentColor">
+                        <path
+                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg viewBox="0 0 20 20" fill="currentColor">
+                        <path
+                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                </div>
+                <p class="review-text">"{{ review.text }}"</p>
+                <div class="review-author">
+                    <div class="review-avatar">{{ review.avatar }}</div>
+                    <span class="review-name">{{ review.name }}</span>
+                </div>
+            </div>
+            }
+            @for (review of reviews; track review.name) {
+            <div class="review-card">
+                <div class="review-stars">
+                    <svg viewBox="0 0 20 20" fill="currentColor">
+                        <path
+                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg viewBox="0 0 20 20" fill="currentColor">
+                        <path
+                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg viewBox="0 0 20 20" fill="currentColor">
+                        <path
+                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg viewBox="0 0 20 20" fill="currentColor">
+                        <path
+                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg viewBox="0 0 20 20" fill="currentColor">
+                        <path
+                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                </div>
+                <p class="review-text">"{{ review.text }}"</p>
+                <div class="review-author">
+                    <div class="review-avatar">{{ review.avatar }}</div>
+                    <span class="review-name">{{ review.name }}</span>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- Car Brands Marquee -->
+<section class="brands-section">
+    <p class="brands-header">Trusted by owners of leading brands</p>
+    <div class="marquee-container">
+        <div class="marquee-track">
+            @for (brand of carBrands; track brand) {
+            <div class="marquee-item">{{ brand }}</div>
+            }
+            @for (brand of carBrands; track brand) {
+            <div class="marquee-item">{{ brand }}</div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- FAQs -->
+<section class="section section-alt" id="faqs">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">Everything you need to know about our services</p>
+        </div>
+        <div class="faq-list">
+            @for (faq of faqs; track faq.q; let i = $index) {
+            <div class="faq-item" [class.open]="faq.open">
+                <button class="faq-question" (click)="toggleFaq(i)">
+                    <span>{{ faq.q }}</span>
+                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        @if (faq.open) {
+                        <path d="M5 12h14" />
+                        } @else {
+                        <path d="M12 5v14M5 12h14" />
+                        }
+                    </svg>
+                </button>
+                @if (faq.open) {
+                <div class="faq-answer">{{ faq.a }}</div>
+                }
+            </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+    <div class="cta-content">
+        <h2 class="cta-title">Ready to Experience Premium Service?</h2>
+        <p class="cta-subtitle">Join thousands of happy customers. Book your first service today.</p>
+        <a routerLink="/register" class="btn-cta">Get Started Now <svg class="btn-icon" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg></a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-brand">
+            <div class="footer-brand-name">Chubb Vehicle Management System</div>
+            <p class="footer-tagline">Premium vehicle care, exceptional results. Your trusted partner for all automotive
+                needs.</p>
+        </div>
+        <div class="footer-links">
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="#">About Us</a>
+                <a href="#">Careers</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <a href="#">General Service</a>
+                <a href="#">Body Work</a>
+                <a href="#">AC Service</a>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <a href="#">Help Center</a>
+                <a href="#">FAQs</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 Chubb Vehicle Management System. All rights reserved.</p>
+    </div>
+</footer>
