@@ -1,5 +1,98 @@
 # Vehicle Service Management System
 
+A full-stack web application for managing vehicle service operations, including service requests, technician assignments, billing, payments, and inventory management.
+
+## Project Overview
+
+This system provides a comprehensive solution for vehicle service centers to manage their day-to-day operations. It handles the complete service lifecycle from customer request submission through technician assignment, service completion, billing, and payment collection.
+
+### Who Is This For
+
+- **Vehicle Service Centers** - Small to medium-sized garages and service stations
+- **Fleet Management Companies** - Organizations managing multiple vehicles
+- **Auto Dealerships** - Service departments within dealerships
+
+### Real-World Use Case
+
+A customer submits a service request for their vehicle. The service manager reviews the request, assigns it to an available technician, and tracks progress. Once the service is complete, the system generates an itemized bill including labor, parts, and taxes. The customer receives notifications at each stage and can make payments through the system.
+
+## Features
+
+### Core Features
+
+- Multi-role authentication and authorization
+- Service request creation and lifecycle management
+- Technician assignment and workload balancing
+- Parts inventory management with low stock alerts
+- Automated bill generation with customizable pricing
+- Payment tracking with partial payment support
+- Real-time notifications (in-app and email)
+- Dashboard with analytics and reports
+- Vehicle service history tracking
+
+### Role-Based Features
+
+| Role | Capabilities |
+|------|-------------|
+| **Admin** | User management, system configuration, approve staff registrations, view all reports |
+| **Service Manager** | Assign technicians, manage service requests, generate bills, view dashboard analytics |
+| **Technician** | View assigned tasks, update service status, log work completed |
+| **Customer** | Submit service requests, view bills, make payments, track service status |
+
+## System Architecture
+
+The application follows a layered architecture pattern:
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                    Angular Frontend                      │
+│              (Standalone Components, Guards)             │
+└─────────────────────────┬───────────────────────────────┘
+                          │ HTTP/REST
+┌─────────────────────────▼───────────────────────────────┐
+│                  ASP.NET Core Web API                    │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────────┐  │
+│  │ Controllers │  │  Services   │  │  Repositories   │  │
+│  └─────────────┘  └─────────────┘  └─────────────────┘  │
+│                    JWT Authentication                    │
+└─────────────────────────┬───────────────────────────────┘
+                          │ Entity Framework Core
+┌─────────────────────────▼───────────────────────────────┐
+│                     SQL Server                           │
+└─────────────────────────────────────────────────────────┘
+```
+
+- **Controllers** - Handle HTTP requests and responses
+- **Services** - Business logic and validation
+- **Repositories** - Data access through Unit of Work pattern
+- **DTOs** - Data transfer objects for API contracts
+
+## Tech Stack
+
+### Frontend
+
+| Technology | Purpose |
+|------------|---------|
+| Angular 18+ | SPA framework |
+| TypeScript | Type-safe JavaScript |
+| Bootstrap 5 | UI components and styling |
+| Bootstrap Icons | Iconography |
+| RxJS | Reactive programming |
+| jsPDF | PDF generation for bills |
+
+### Backend
+
+| Technology | Purpose |
+|------------|---------|
+| .NET 9.0 | Runtime |
+| ASP.NET Core Web API | REST API framework |
+| Entity Framework Core | ORM |
+| SQL Server | Database |
+| JWT Bearer | Authentication |
+| BCrypt.Net | Password hashing |
+| MailKit | Email notifications |
+
+
 ## Installation and Setup Guide
 
 ---
